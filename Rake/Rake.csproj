@@ -1,0 +1,827 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C8C0D4C3-32FA-4286-921E-6C52645569CA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rake</RootNamespace>
+    <AssemblyName>Rake</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\Rake\Publish_live\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>176</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>B02A11FB76AB37A50E9B0E1B152F54450C0D3C6D</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Rake_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v14.2, Version=14.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v14.2.Core, Version=14.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v14.2, Version=14.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v14.2, Version=14.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v14.2, Version=14.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v14.2, Version=14.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v14.2, Version=14.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EPPlus">
+      <HintPath>D:\ADIT-S Projects\FleetManagement\FleetManagement\bin\Debug\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="PdfSharp">
+      <HintPath>..\packages\PdfSharp.1.32.3057.0\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting">
+      <HintPath>..\packages\PdfSharp.1.32.3057.0\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CompareEsugam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompareEsugam.Designer.cs">
+      <DependentUpon>CompareEsugam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connection.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GCData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GCData.Designer.cs">
+      <DependentUpon>GCData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GCReciveEsugam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GCReciveEsugam.designer.cs">
+      <DependentUpon>GCReciveEsugam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateGC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerateGC.Designer.cs">
+      <DependentUpon>GenerateGC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateLocalBills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerateLocalBills.Designer.cs">
+      <DependentUpon>GenerateLocalBills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalGCRecive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalGCRecive.designer.cs">
+      <DependentUpon>LocalGCRecive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GCRecive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GCRecive.designer.cs">
+      <DependentUpon>GCRecive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateBills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerateBills.Designer.cs">
+      <DependentUpon>GenerateBills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalShipmentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalShipmentDetails.Designer.cs">
+      <DependentUpon>LocalShipmentDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\RailHandling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\RailHandling.designer.cs">
+      <DependentUpon>RailHandling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\TaxMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\TaxMaster.designer.cs">
+      <DependentUpon>TaxMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\From.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\From.designer.cs">
+      <DependentUpon>From.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DestinationMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\DestinationMaster.designer.cs">
+      <DependentUpon>DestinationMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\DestinationRate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\DestinationRate.designer.cs">
+      <DependentUpon>DestinationRate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\PartyMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\PartyMaster.designer.cs">
+      <DependentUpon>PartyMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\ProductMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\ProductMaster.designer.cs">
+      <DependentUpon>ProductMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\RakeType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\RakeType.Designer.cs">
+      <DependentUpon>RakeType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\UnLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\UnLoad.Designer.cs">
+      <DependentUpon>UnLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\WorkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\WorkOrder.Designer.cs">
+      <DependentUpon>WorkOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OSTVehicles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OSTVehicles.designer.cs">
+      <DependentUpon>OSTVehicles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OST_Transporters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OST_Transporters.designer.cs">
+      <DependentUpon>OST_Transporters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RakeDatatable.cs" />
+    <Compile Include="Esugam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Esugam.Designer.cs">
+      <DependentUpon>Esugam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RakeShipmentDetailsAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RakeShipmentDetailsAll.Designer.cs">
+      <DependentUpon>RakeShipmentDetailsAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RakeShipmentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RakeShipmentDetails.Designer.cs">
+      <DependentUpon>RakeShipmentDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIForm.designer.cs">
+      <DependentUpon>MDIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Masters\VehicleMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\VehicleMaster.designer.cs">
+      <DependentUpon>VehicleMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PartyDestinationMonth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartyDestinationMonth.Designer.cs">
+      <DependentUpon>PartyDestinationMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DestinationWiseReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DestinationWiseReport.Designer.cs">
+      <DependentUpon>DestinationWiseReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\RakeSummaryIndividual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\RakeSummaryIndividual.Designer.cs">
+      <DependentUpon>RakeSummaryIndividual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\TMTReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\TMTReport.Designer.cs">
+      <DependentUpon>TMTReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchOnShipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchOnShipment.Designer.cs">
+      <DependentUpon>SearchOnShipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SumOnDestination.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SumOnDestination.Designer.cs">
+      <DependentUpon>SumOnDestination.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RakeSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RakeSummary.Designer.cs">
+      <DependentUpon>RakeSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Rake.cs">
+      <DependentUpon>Rake.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Rake.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rake.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\BillFright.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\BillFright.Designer.cs">
+      <DependentUpon>BillFright.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\BillHandling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\BillHandling.Designer.cs">
+      <DependentUpon>BillHandling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\BillsAttach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\BillsAttach.Designer.cs">
+      <DependentUpon>BillsAttach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\GenerateGC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\GenerateGC.Designer.cs">
+      <DependentUpon>GenerateGC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\LocalBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\LocalBill.Designer.cs">
+      <DependentUpon>LocalBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\LocalBillAttach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\LocalBillAttach.Designer.cs">
+      <DependentUpon>LocalBillAttach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\RakeSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\RakeSummary.Designer.cs">
+      <DependentUpon>RakeSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\TMT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\TMT.Designer.cs">
+      <DependentUpon>TMT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchOn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchOn.Designer.cs">
+      <DependentUpon>SearchOn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BillWiseReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BillWiseReports.Designer.cs">
+      <DependentUpon>BillWiseReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaxReportsDatewise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaxReportsDatewise.Designer.cs">
+      <DependentUpon>TaxReportsDatewise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaxReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaxReports.Designer.cs">
+      <DependentUpon>TaxReports.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CompareEsugam.resx">
+      <DependentUpon>CompareEsugam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCData.resx">
+      <DependentUpon>GCData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCReciveEsugam.resx">
+      <DependentUpon>GCReciveEsugam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerateGC.resx">
+      <DependentUpon>GenerateGC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerateLocalBills.resx">
+      <DependentUpon>GenerateLocalBills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalGCRecive.resx">
+      <DependentUpon>LocalGCRecive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCRecive.resx">
+      <DependentUpon>GCRecive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerateBills.resx">
+      <DependentUpon>GenerateBills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalShipmentDetails.resx">
+      <DependentUpon>LocalShipmentDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\RailHandling.resx">
+      <DependentUpon>RailHandling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\TaxMaster.resx">
+      <DependentUpon>TaxMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\From.resx">
+      <DependentUpon>From.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\DestinationMaster.resx">
+      <DependentUpon>DestinationMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\DestinationRate.resx">
+      <DependentUpon>DestinationRate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\PartyMaster.resx">
+      <DependentUpon>PartyMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\ProductMaster.resx">
+      <DependentUpon>ProductMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\RakeType.resx">
+      <DependentUpon>RakeType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\UnLoad.resx">
+      <DependentUpon>UnLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\WorkOrder.resx">
+      <DependentUpon>WorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSTVehicles.resx">
+      <DependentUpon>OSTVehicles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OST_Transporters.resx">
+      <DependentUpon>OST_Transporters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Esugam.resx">
+      <DependentUpon>Esugam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RakeShipmentDetailsAll.resx">
+      <DependentUpon>RakeShipmentDetailsAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RakeShipmentDetails.resx">
+      <DependentUpon>RakeShipmentDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIForm.resx">
+      <DependentUpon>MDIForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Masters\VehicleMaster.resx">
+      <DependentUpon>VehicleMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportForms\Gc Generate - Copy.rdlc" />
+    <EmbeddedResource Include="Reports\ReportForms\RakeSummaryIndividual.rdlc" />
+    <EmbeddedResource Include="Reports\ReportForms\RakeSummary - Copy.rdlc" />
+    <EmbeddedResource Include="PartyDestinationMonth.resx">
+      <DependentUpon>PartyDestinationMonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DestinationWiseReport.resx">
+      <DependentUpon>DestinationWiseReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportForms\BillWiseReport.rdlc" />
+    <EmbeddedResource Include="Reports\ReportForms\TaxReportsDatewise.rdlc" />
+    <EmbeddedResource Include="Reports\ReportForms\TMTReportNew.rdlc" />
+    <EmbeddedResource Include="Reports\Reports\RakeSummaryIndividual.resx">
+      <DependentUpon>RakeSummaryIndividual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\TMTReport.resx">
+      <DependentUpon>TMTReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchOnShipment.resx">
+      <DependentUpon>SearchOnShipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SumOnDestination.resx">
+      <DependentUpon>SumOnDestination.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RakeSummary.resx">
+      <DependentUpon>RakeSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportForms\Bill.rdlc" />
+    <EmbeddedResource Include="Reports\ReportForms\BillAttachNoBreak.rdlc" />
+    <EmbeddedResource Include="Reports\ReportForms\Searc.rdlc" />
+    <EmbeddedResource Include="Reports\ReportForms\BillAttach.rdlc" />
+    <EmbeddedResource Include="Reports\ReportForms\BillHandling.rdlc" />
+    <EmbeddedResource Include="Reports\ReportForms\Gc Generate.rdlc" />
+    <EmbeddedResource Include="Reports\ReportForms\LocalBillAttach.rdlc" />
+    <EmbeddedResource Include="Reports\ReportForms\RakeSummary.rdlc" />
+    <EmbeddedResource Include="Reports\ReportForms\TaxReports.rdlc" />
+    <EmbeddedResource Include="Reports\ReportForms\TMTReport.rdlc" />
+    <EmbeddedResource Include="Reports\Reports\BillFright.resx">
+      <DependentUpon>BillFright.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\BillHandling.resx">
+      <DependentUpon>BillHandling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\BillsAttach.resx">
+      <DependentUpon>BillsAttach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportForms\LocalBill.rdlc" />
+    <EmbeddedResource Include="Reports\Reports\GenerateGC.resx">
+      <DependentUpon>GenerateGC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\LocalBill.resx">
+      <DependentUpon>LocalBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\LocalBillAttach.resx">
+      <DependentUpon>LocalBillAttach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\RakeSummary.resx">
+      <DependentUpon>RakeSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\TMT.resx">
+      <DependentUpon>TMT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchOn.resx">
+      <DependentUpon>SearchOn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BillWiseReports.resx">
+      <DependentUpon>BillWiseReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaxReportsDatewise.resx">
+      <DependentUpon>TaxReportsDatewise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaxReports.resx">
+      <DependentUpon>TaxReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Rake_TemporaryKey.pfx" />
+    <None Include="Reports\Rake.xsc">
+      <DependentUpon>Rake.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Rake.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Rake.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Rake.xss">
+      <DependentUpon>Rake.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\About.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AdventCode1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculator_22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CompanyIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmailIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PhoneIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrintIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WebSiteIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculator_221.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="DevExpress.Data.v14.2">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Office.v14.2.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Printing.v14.2.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.RichEdit.v14.2.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Sparkline.v14.2.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Utils.v14.2">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraBars.v14.2">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraEditors.v14.2">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraGrid.v14.2">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraLayout.v14.2">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraPrinting.v14.2">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraTreeList.v14.2">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.WinForms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Types">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Rake.pdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
