@@ -28,10 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TxtGcNo = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ChkExtraCopy = new System.Windows.Forms.CheckBox();
+            this.ChkOfficeCopy = new System.Windows.Forms.CheckBox();
+            this.ChkCustomerCopy = new System.Windows.Forms.CheckBox();
+            this.ChkDriverCopy = new System.Windows.Forms.CheckBox();
+            this.DdlCustomer = new DevExpress.XtraEditors.CheckedComboBoxEdit();
+            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.DdlRakeNo = new System.Windows.Forms.ComboBox();
@@ -44,15 +50,9 @@
             this.CtrlBtnPrintBill = new System.Windows.Forms.Button();
             this.GvRakeBill = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
-            this.DdlCustomer = new DevExpress.XtraEditors.CheckedComboBoxEdit();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ChkDriverCopy = new System.Windows.Forms.CheckBox();
-            this.ChkCustomerCopy = new System.Windows.Forms.CheckBox();
-            this.ChkOfficeCopy = new System.Windows.Forms.CheckBox();
-            this.ChkExtraCopy = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GvRakeBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DdlCustomer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvRakeBill)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtGcNo
@@ -98,6 +98,72 @@
             this.groupBox1.Size = new System.Drawing.Size(1099, 109);
             this.groupBox1.TabIndex = 189;
             this.groupBox1.TabStop = false;
+            // 
+            // ChkExtraCopy
+            // 
+            this.ChkExtraCopy.AutoSize = true;
+            this.ChkExtraCopy.Location = new System.Drawing.Point(795, 75);
+            this.ChkExtraCopy.Name = "ChkExtraCopy";
+            this.ChkExtraCopy.Size = new System.Drawing.Size(77, 17);
+            this.ChkExtraCopy.TabIndex = 295;
+            this.ChkExtraCopy.Text = "Extra Copy";
+            this.ChkExtraCopy.UseVisualStyleBackColor = true;
+            this.ChkExtraCopy.Visible = false;
+            // 
+            // ChkOfficeCopy
+            // 
+            this.ChkOfficeCopy.AutoSize = true;
+            this.ChkOfficeCopy.Location = new System.Drawing.Point(695, 75);
+            this.ChkOfficeCopy.Name = "ChkOfficeCopy";
+            this.ChkOfficeCopy.Size = new System.Drawing.Size(81, 17);
+            this.ChkOfficeCopy.TabIndex = 294;
+            this.ChkOfficeCopy.Text = "Office Copy";
+            this.ChkOfficeCopy.UseVisualStyleBackColor = true;
+            this.ChkOfficeCopy.Visible = false;
+            // 
+            // ChkCustomerCopy
+            // 
+            this.ChkCustomerCopy.AutoSize = true;
+            this.ChkCustomerCopy.Location = new System.Drawing.Point(579, 74);
+            this.ChkCustomerCopy.Name = "ChkCustomerCopy";
+            this.ChkCustomerCopy.Size = new System.Drawing.Size(97, 17);
+            this.ChkCustomerCopy.TabIndex = 293;
+            this.ChkCustomerCopy.Text = "Customer Copy";
+            this.ChkCustomerCopy.UseVisualStyleBackColor = true;
+            this.ChkCustomerCopy.Visible = false;
+            // 
+            // ChkDriverCopy
+            // 
+            this.ChkDriverCopy.AutoSize = true;
+            this.ChkDriverCopy.Checked = true;
+            this.ChkDriverCopy.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ChkDriverCopy.Location = new System.Drawing.Point(473, 73);
+            this.ChkDriverCopy.Name = "ChkDriverCopy";
+            this.ChkDriverCopy.Size = new System.Drawing.Size(81, 17);
+            this.ChkDriverCopy.TabIndex = 292;
+            this.ChkDriverCopy.Text = "Driver Copy";
+            this.ChkDriverCopy.UseVisualStyleBackColor = true;
+            this.ChkDriverCopy.Visible = false;
+            // 
+            // DdlCustomer
+            // 
+            this.DdlCustomer.EditValue = "";
+            this.DdlCustomer.Location = new System.Drawing.Point(155, 73);
+            this.DdlCustomer.Name = "DdlCustomer";
+            this.DdlCustomer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.DdlCustomer.Size = new System.Drawing.Size(242, 20);
+            this.DdlCustomer.TabIndex = 291;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(75, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 18);
+            this.label1.TabIndex = 290;
+            this.label1.Text = "Customer";
             // 
             // label3
             // 
@@ -221,14 +287,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GvRakeBill.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GvRakeBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GvRakeBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.GvRakeBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GvRakeBill.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.GvRakeBill.Location = new System.Drawing.Point(12, 166);
@@ -249,66 +315,6 @@
             this.label4.TabIndex = 192;
             this.label4.Text = "Generate GC";
             // 
-            // DdlCustomer
-            // 
-            this.DdlCustomer.EditValue = "";
-            this.DdlCustomer.Location = new System.Drawing.Point(155, 73);
-            this.DdlCustomer.Name = "DdlCustomer";
-            this.DdlCustomer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DdlCustomer.Size = new System.Drawing.Size(242, 20);
-            this.DdlCustomer.TabIndex = 291;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(75, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 18);
-            this.label1.TabIndex = 290;
-            this.label1.Text = "Customer";
-            // 
-            // ChkDriverCopy
-            // 
-            this.ChkDriverCopy.AutoSize = true;
-            this.ChkDriverCopy.Location = new System.Drawing.Point(473, 73);
-            this.ChkDriverCopy.Name = "ChkDriverCopy";
-            this.ChkDriverCopy.Size = new System.Drawing.Size(81, 17);
-            this.ChkDriverCopy.TabIndex = 292;
-            this.ChkDriverCopy.Text = "Driver Copy";
-            this.ChkDriverCopy.UseVisualStyleBackColor = true;
-            // 
-            // ChkCustomerCopy
-            // 
-            this.ChkCustomerCopy.AutoSize = true;
-            this.ChkCustomerCopy.Location = new System.Drawing.Point(579, 74);
-            this.ChkCustomerCopy.Name = "ChkCustomerCopy";
-            this.ChkCustomerCopy.Size = new System.Drawing.Size(97, 17);
-            this.ChkCustomerCopy.TabIndex = 293;
-            this.ChkCustomerCopy.Text = "Customer Copy";
-            this.ChkCustomerCopy.UseVisualStyleBackColor = true;
-            // 
-            // ChkOfficeCopy
-            // 
-            this.ChkOfficeCopy.AutoSize = true;
-            this.ChkOfficeCopy.Location = new System.Drawing.Point(695, 75);
-            this.ChkOfficeCopy.Name = "ChkOfficeCopy";
-            this.ChkOfficeCopy.Size = new System.Drawing.Size(81, 17);
-            this.ChkOfficeCopy.TabIndex = 294;
-            this.ChkOfficeCopy.Text = "Office Copy";
-            this.ChkOfficeCopy.UseVisualStyleBackColor = true;
-            // 
-            // ChkExtraCopy
-            // 
-            this.ChkExtraCopy.AutoSize = true;
-            this.ChkExtraCopy.Location = new System.Drawing.Point(795, 75);
-            this.ChkExtraCopy.Name = "ChkExtraCopy";
-            this.ChkExtraCopy.Size = new System.Drawing.Size(77, 17);
-            this.ChkExtraCopy.TabIndex = 295;
-            this.ChkExtraCopy.Text = "Extra Copy";
-            this.ChkExtraCopy.UseVisualStyleBackColor = true;
-            // 
             // GenerateGC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,8 +328,8 @@
             this.Text = "GenerateGC";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GvRakeBill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DdlCustomer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GvRakeBill)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
