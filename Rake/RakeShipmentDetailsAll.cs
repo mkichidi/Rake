@@ -1003,7 +1003,7 @@ namespace Rake
                 }
                 if (error.Length > 0 && correct.Length > 0)
                 {
-                    MessageBox.Show("Lines at " + correct.Substring(1) + " uploaded succesfully." + Environment.NewLine + " Error at " + error + Environment.NewLine + "Please correct and upload error data at " + clearExcelUploadSuccess(correct));
+                    MessageBox.Show("Lines at " + correct.Substring(1) + " uploaded succesfully." + Environment.NewLine + " Error at " + error + Environment.NewLine);
                     error = string.Empty;
                     correct = string.Empty;
                 }

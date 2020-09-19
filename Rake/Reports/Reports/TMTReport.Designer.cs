@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnExcel = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.DdlRakeNo = new System.Windows.Forms.ComboBox();
@@ -40,7 +41,6 @@
             this.BtnGetBills = new System.Windows.Forms.Button();
             this.GvDetails = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
-            this.BtnExcel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvDetails)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +63,16 @@
             this.groupBox1.Size = new System.Drawing.Size(1131, 71);
             this.groupBox1.TabIndex = 187;
             this.groupBox1.TabStop = false;
+            // 
+            // BtnExcel
+            // 
+            this.BtnExcel.Location = new System.Drawing.Point(924, 29);
+            this.BtnExcel.Name = "BtnExcel";
+            this.BtnExcel.Size = new System.Drawing.Size(75, 23);
+            this.BtnExcel.TabIndex = 290;
+            this.BtnExcel.Text = "Excel";
+            this.BtnExcel.UseVisualStyleBackColor = true;
+            this.BtnExcel.Click += new System.EventHandler(this.BtnExcel_Click);
             // 
             // label3
             // 
@@ -172,7 +182,7 @@
             this.GvDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GvDetails.Location = new System.Drawing.Point(21, 167);
             this.GvDetails.Name = "GvDetails";
-            this.GvDetails.Size = new System.Drawing.Size(1139, 348);
+            this.GvDetails.Size = new System.Drawing.Size(987, 348);
             this.GvDetails.TabIndex = 188;
             // 
             // label4
@@ -187,21 +197,11 @@
             this.label4.TabIndex = 302;
             this.label4.Text = "TMT Report";
             // 
-            // BtnExcel
-            // 
-            this.BtnExcel.Location = new System.Drawing.Point(924, 29);
-            this.BtnExcel.Name = "BtnExcel";
-            this.BtnExcel.Size = new System.Drawing.Size(75, 23);
-            this.BtnExcel.TabIndex = 290;
-            this.BtnExcel.Text = "Excel";
-            this.BtnExcel.UseVisualStyleBackColor = true;
-            this.BtnExcel.Click += new System.EventHandler(this.BtnExcel_Click);
-            // 
             // TMTReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1172, 527);
+            this.ClientSize = new System.Drawing.Size(1020, 527);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.GvDetails);
             this.Controls.Add(this.groupBox1);

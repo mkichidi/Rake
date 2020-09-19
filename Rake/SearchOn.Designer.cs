@@ -77,7 +77,7 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Rake.Reports.ReportForms.Searc.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(3, 198);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1239, 324);
+            this.reportViewer1.Size = new System.Drawing.Size(1017, 324);
             this.reportViewer1.TabIndex = 0;
             // 
             // TxtGcNoSearch
@@ -377,7 +377,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1242, 523);
+            this.ClientSize = new System.Drawing.Size(1020, 523);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.TxtBillNo);
             this.Controls.Add(this.label11);

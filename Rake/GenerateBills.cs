@@ -901,9 +901,13 @@ namespace Rake
             {
                 RakeDatatable.bill = (OrderId > 5 ? "R" : "") + TxtHandlingBill.Text;
             }
-            else
+            else if(fromId == 2)
             {
                 RakeDatatable.bill = (OrderId > 5 ? "R" : "") + TxtHosurHandling.Text;
+            }
+            else if (fromId == 4)
+            {
+                RakeDatatable.bill = (OrderId > 5 ? "R" : "") + TxtMaddurHandling.Text;
             }
             //RakeDatatable.bill = TxtHandlingBill.Text;
             RakeDatatable.dt = DtBackUp;

@@ -140,6 +140,25 @@ namespace Rake
             dt =(DataTable) GvRakeBill.DataSource;
             dt.AcceptChanges();
 
+
+            DataGridViewColumn oldColumn = GvRakeBill.SortedColumn;
+
+            if (oldColumn != null)
+            {
+                string sortOrder = string.Empty;
+                if (oldColumn.HeaderCell.SortGlyphDirection == System.Windows.Forms.SortOrder.Ascending)
+                {
+                    sortOrder = " Asc";
+                }
+                else
+                {
+                    sortOrder = " Desc";
+                }
+                DataView dv = dt.DefaultView;
+                dv.Sort = oldColumn.HeaderText + sortOrder;
+                dt = dv.ToTable();
+            }
+
             if (dt.Rows.Count < 1)
             {
                 MessageBox.Show("No data to print Gc");

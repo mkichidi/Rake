@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TxtGcNo = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -272,7 +272,7 @@
             this.CtrlBtnPrintBill.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CtrlBtnPrintBill.FlatAppearance.BorderSize = 0;
             this.CtrlBtnPrintBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CtrlBtnPrintBill.Location = new System.Drawing.Point(950, 382);
+            this.CtrlBtnPrintBill.Location = new System.Drawing.Point(845, 382);
             this.CtrlBtnPrintBill.Name = "CtrlBtnPrintBill";
             this.CtrlBtnPrintBill.Size = new System.Drawing.Size(75, 48);
             this.CtrlBtnPrintBill.TabIndex = 191;
@@ -287,20 +287,20 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GvRakeBill.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GvRakeBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GvRakeBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GvRakeBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GvRakeBill.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.GvRakeBill.Location = new System.Drawing.Point(12, 166);
             this.GvRakeBill.Name = "GvRakeBill";
             this.GvRakeBill.ReadOnly = true;
-            this.GvRakeBill.Size = new System.Drawing.Size(1096, 195);
+            this.GvRakeBill.Size = new System.Drawing.Size(991, 195);
             this.GvRakeBill.TabIndex = 190;
             // 
             // label4
@@ -319,7 +319,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1125, 442);
+            this.ClientSize = new System.Drawing.Size(1020, 442);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.CtrlBtnPrintBill);
             this.Controls.Add(this.GvRakeBill);

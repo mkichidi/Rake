@@ -125,24 +125,24 @@ namespace Rake.Reports.Reports
             {
                 var worksheet = package.Workbook.Worksheets[1];
                 String month = RakeDatatable.dt.Rows[0]["ShipmentMonth"].ToString().Split('-')[0];
-                String year = RakeDatatable.dt.Rows[0]["ShipmentMonth"].ToString().Split('-')[1]; 
+                String year = RakeDatatable.dt.Rows[0]["ShipmentMonth"].ToString().Split('-')[1];
                 //String month = Convert.ToDateTime(RakeDatatable.submitDate.Date).ToString("MMM");
                 //string year = Convert.ToDateTime(RakeDatatable.submitDate.Date).ToString("yyyy");
                 System.IO.Directory.CreateDirectory("D:\\Rake\\" + RakeDatatable.financialYear + "\\" + "Reports\\" + month + "-" + year + "\\Bills");
                 using (ExcelPackage pac = new ExcelPackage(new System.IO.FileInfo("D:\\Rake\\" + RakeDatatable.financialYear + "\\" + "Reports\\" + month + "-" + year + "\\Bills\\Rake_" + month + "-" + year + ".xlsx")))
                 {
-                    var worksheetCheck = pac.Workbook.Worksheets[ RakeDatatable.bill];
+                    var worksheetCheck = pac.Workbook.Worksheets[RakeDatatable.bill];
 
                     if (worksheetCheck == null)
                     {
 
-                        pac.Workbook.Worksheets.Add( RakeDatatable.bill, worksheet);
+                        pac.Workbook.Worksheets.Add(RakeDatatable.bill, worksheet);
                         pac.Save();
                     }
                     else
                     {
                         pac.Workbook.Worksheets.Delete(worksheetCheck);
-                        pac.Workbook.Worksheets.Add( RakeDatatable.bill, worksheet);
+                        pac.Workbook.Worksheets.Add(RakeDatatable.bill, worksheet);
                         pac.Save();
                     }
                 }
@@ -167,7 +167,7 @@ namespace Rake.Reports.Reports
                 }
             }
 
-            
+
 
             System.IO.FileInfo excel = new System.IO.FileInfo(@"d:\output.xlsx");
 
