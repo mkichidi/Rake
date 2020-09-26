@@ -939,9 +939,13 @@ namespace Rake
                 {
                     cmd.Parameters.AddWithValue("@Bill", TxtHandlingBill.Text);
                 }
-                else
+                else if (fromId == 2)
                 {
                     cmd.Parameters.AddWithValue("@Bill", TxtHosurHandling.Text);
+                }
+                else if (fromId == 4)
+                {
+                    cmd.Parameters.AddWithValue("@Bill", TxtMaddurHandling.Text);
                 }
                 //cmd.Parameters.AddWithValue("@Bill", TxtHandlingBill.Text);
                 cmd.Parameters.AddWithValue("@BillMonth", "01/" + DDLMonth.Text + "/" + DDLYear.Text);
