@@ -12,6 +12,7 @@ namespace Rake
         public static DataTable dt = new DataTable();
         public static DataTable dtSummary = new DataTable();
         public static DataTable dtTax = new DataTable();
+        public static DataTable dtGSTTax = new DataTable();
         public static DateTime submitDate = new DateTime();
         public static string type = string.Empty;
         public static string bill = string.Empty;

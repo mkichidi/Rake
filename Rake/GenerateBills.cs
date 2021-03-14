@@ -539,20 +539,6 @@ namespace Rake
                             return;
                         }
                     }
-
-
-                    //RakeDatatable.dt = dt.Select("From ='" + dr["From"] + "'").CopyToDataTable();
-                    //RakeDatatable.submitDate = DtSubmitDate.Value.Date;
-                    //Rake.Reports.Reports.BillFright BillFright = new Rake.Reports.Reports.BillFright();
-                    //BillFright.Show();
-
-                    //RakeDatatable.dt = null;
-                    //RakeDatatable.dt = dt.Select("From ='" + dr["From"] + "'").CopyToDataTable();
-                    //RakeDatatable.dt = dt.Select("From ='" + dr["From"] + "'").CopyToDataTable();
-                    //Rake.Reports.Reports.BillHandling BillHandling = new Rake.Reports.Reports.BillHandling();
-                    //BillHandling.Show();
-
-                    //RakeDatatable.dt = null;
                 }
             }
             else
@@ -786,13 +772,22 @@ namespace Rake
                 }
             }
 
-
             SqlConnection con = new SqlConnection(Connection.InvAdminConn());
-            SqlCommand cmd = new SqlCommand("GetRakeTaxOnDate", con);
+            SqlCommand cmd = new SqlCommand("GetRakeFrieghtTaxOnDate", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@ShipDate", DtSubmitDate.Value);
             con.Open();
             SqlDataReader reader;
+            reader = cmd.ExecuteReader();
+            DataTable dataTableFrieghtTax = new DataTable();
+            dataTableFrieghtTax.Load(reader);
+            con.Close();
+
+            con = new SqlConnection(Connection.InvAdminConn());
+            cmd = new SqlCommand("GetRakeTaxOnDate", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ShipDate", DtSubmitDate.Value);
+            con.Open();
             reader = cmd.ExecuteReader();
             DataTable dataTable = new DataTable();
             dataTable.Load(reader);
@@ -854,9 +849,11 @@ namespace Rake
             RakeDatatable.dt = new DataTable();
             RakeDatatable.dtSummary = new DataTable();
             RakeDatatable.dtTax = new DataTable();
+            RakeDatatable.dtGSTTax = new DataTable();
             RakeDatatable.shipmentNo = string.Empty;
 
             RakeDatatable.shipmentNo = TxtShipmentNo.Text;
+            RakeDatatable.dtGSTTax = dataTableFrieghtTax;
             RakeDatatable.dt = DtBackUp;
             Rake.Reports.Reports.BillFright BillFright = new Rake.Reports.Reports.BillFright();
             BillFright.Show();
@@ -865,9 +862,20 @@ namespace Rake
             RakeDatatable.dt = new DataTable();
             RakeDatatable.dtSummary = new DataTable();
             RakeDatatable.dtTax = new DataTable();
+            RakeDatatable.dtGSTTax = new DataTable();
             RakeDatatable.bill = string.Empty;
             RakeDatatable.shipmentNo = string.Empty;
             RakeDatatable.shipmentNo = string.Empty;
+
+            con = new SqlConnection(Connection.InvAdminConn());
+            cmd = new SqlCommand("GetRakeFrieghtTaxOnDate", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ShipDate", DtSubmitDate.Value);
+            con.Open();
+            reader = cmd.ExecuteReader();
+            dataTableFrieghtTax = new DataTable();
+            dataTableFrieghtTax.Load(reader);
+            con.Close();
 
             con = new SqlConnection(Connection.InvAdminConn());
             cmd = new SqlCommand("GetRakeTaxOnDate", con);
@@ -920,6 +928,7 @@ namespace Rake
             //else
             //{
             RakeDatatable.dtTax = dataTable;
+            RakeDatatable.dtGSTTax= dataTableFrieghtTax;
             //}
             RakeDatatable.submitDate = DtSubmitDate.Value.Date;
             Rake.Reports.Reports.BillHandling BillHandling = new Rake.Reports.Reports.BillHandling();
@@ -967,7 +976,46 @@ namespace Rake
                 con.Close();
             }
 
+            if (DtSubmitDate.Value.Date >= Convert.ToDateTime("01-Apr-2021"))
+            {
+                foreach (DataRow dr in dataTableFrieghtTax.Rows)
+                {
+                    con = new SqlConnection(Connection.InvAdminConn());
+                    cmd = new SqlCommand("InsertRakeTaxDetails", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@RakeNo", DdlRakeNo.Text);
+                    cmd.Parameters.AddWithValue("@SubmittedOn", DtSubmitDate.Value.Date);
+                    if (fromId == 1)
+                    {
+                        cmd.Parameters.AddWithValue("@Bill", TxtHandlingBill.Text);
+                    }
+                    else if (fromId == 2)
+                    {
+                        cmd.Parameters.AddWithValue("@Bill", TxtHosurHandling.Text);
+                    }
+                    else if (fromId == 4)
+                    {
+                        cmd.Parameters.AddWithValue("@Bill", TxtMaddurHandling.Text);
+                    }
+                    //cmd.Parameters.AddWithValue("@Bill", TxtHandlingBill.Text);
+                    cmd.Parameters.AddWithValue("@BillMonth", "01/" + DDLMonth.Text + "/" + DDLYear.Text);
 
+                    decimal taxAmount = Math.Round(Convert.ToDecimal(dr["RakeTax"]) * Convert.ToDecimal(DtBackUp.Compute("Sum([Amount])", "")) / 100, 0);
+
+                    cmd.Parameters.AddWithValue("@TaxAmount", taxAmount);
+                    //nt = (Convert.ToDecimal(dt.Rows[0]["RakeHandling/Ton"]) * Convert.ToDecimal(dt.Compute("Sum([NetWt])", "")));
+
+                    cmd.Parameters.AddWithValue("@RakeType", DdlRakeType.SelectedValue);
+                    cmd.Parameters.AddWithValue("@RakeTax", dr["RakeTax"]);
+                    cmd.Parameters.AddWithValue("@RakeTaxId", dr["RakeTaxId"]);
+                    cmd.Parameters.AddWithValue("@CB", "");
+                    cmd.Parameters.AddWithValue("@CD", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@RakeWorkOrderID", OrderId);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
 
             con = new SqlConnection(Connection.InvAdminConn());
             cmd = new SqlCommand("InsertRakeBillDetails", con);
@@ -1048,6 +1096,7 @@ namespace Rake
             RakeDatatable.dtSummary = new DataTable();
             RakeDatatable.bill = string.Empty;
             RakeDatatable.dtTax = new DataTable();
+            RakeDatatable.dtGSTTax = new DataTable();
         }
 
         private void TxtFrightBill_TextChanged(object sender, EventArgs e)

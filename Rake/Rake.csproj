@@ -482,6 +482,7 @@
     <EmbeddedResource Include="Masters\VehicleMaster.resx">
       <DependentUpon>VehicleMaster.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportForms\BillGST.rdlc" />
     <EmbeddedResource Include="Reports\ReportForms\Gc Generate - Copy.rdlc" />
     <EmbeddedResource Include="Reports\ReportForms\RakeSummaryIndividual.rdlc" />
     <EmbeddedResource Include="Reports\ReportForms\RakeSummary - Copy.rdlc" />
